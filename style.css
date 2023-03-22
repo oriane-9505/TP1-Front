@@ -1,0 +1,53 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body {
+  margin: 0;
+  color: white;
+}
+div {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-basis: 100%;
+  overflow: hidden;
+}
+header,
+footer {
+  padding: var(--pad-phone, 20px);
+  background-color: var(--hf-bg-color, blue);
+}
+aside {
+  padding: var(--pad-phone, 20px);
+  background-color: var(--a-bg-color, red);
+  width: 150px;
+}
+main {
+  padding: var(--pad-phone, 20px);
+  background-color: var(--m-bg-color, green);
+  flex: auto;
+  overflow: scroll;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --pad-phone: 10px;
+    --hf-bg-color: #c878ff;
+    --a-bg-color: #4cff8f;
+    --m-bg-color: #78ceff;
+  }
+  div {
+    flex-direction: column;
+  }
+  aside {
+    width: 100%;
+  }
+}
